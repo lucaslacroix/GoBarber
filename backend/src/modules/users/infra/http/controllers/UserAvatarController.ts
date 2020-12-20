@@ -11,6 +11,8 @@ class UsersAvatarController {
     ): Promise<Response> {
         const updateAvatar = container.resolve(UpdateUserAvatarService);
 
+        console.log(request.file);
+
         const user = await updateAvatar.execute({
             user_id: request.user.id,
             avatarFileName: request.file.filename,
